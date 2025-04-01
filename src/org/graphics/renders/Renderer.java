@@ -55,6 +55,7 @@ public class Renderer {
         glBindVertexArray(vaoID);
         Matrix4f modelMatrix = new Matrix4f().identity()
                 .rotate((float)Math.toRadians(30), 0, 0, 1)
+
                 .translate(0.1f,0.1f,0.1f);
         shaderProgram.setUniform("modelMatrix",modelMatrix);
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 6);
