@@ -50,13 +50,12 @@ public class Renderer {
     }
 
     public void render() {
-        // A = 1, B = 6, C = 4, D = 6
+        // A = 1, B = 7, C = 3, D = 0
         shaderProgram.use();
         glBindVertexArray(vaoID);
         Matrix4f modelMatrix = new Matrix4f().identity()
                 .rotate((float)Math.toRadians(30), 0, 0, 1)
-
-                .translate(0.1f,0.1f,0.1f);
+                .translate(0.3f,0.7f,0.0f);
         shaderProgram.setUniform("modelMatrix",modelMatrix);
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 6);
         glBindVertexArray(0);
